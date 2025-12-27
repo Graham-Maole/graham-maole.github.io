@@ -195,6 +195,21 @@ a:hover {
   letter-spacing: -0.005em;
   margin-bottom: 18px;
 }
+  /* =========================
+   APPLE SCROLL REVEAL
+   ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero-subtitle {
   font-size: 20px;
   color: var(--text-muted);
@@ -500,6 +515,25 @@ section h3 {
   });
 </script>
 
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  reveals.forEach(section => {
+    revealObserver.observe(section);
+  });
+</script>
 
 
 
