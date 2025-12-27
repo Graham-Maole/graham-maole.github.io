@@ -92,6 +92,81 @@
     margin-bottom: 10px;
   }
 </style>
+<style>
+/* =========================
+   APPLE-LIKE BASE SYSTEM
+   ========================= */
+
+:root {
+  --max-width: 980px;
+  --text-main: #1d1d1f;
+  --text-muted: #6e6e73;
+  --bg-light: #ffffff;
+  --bg-soft: #f5f5f7;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+               "SF Pro Display", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+/* Typography hierarchy (Apple-style) */
+h1 {
+  font-size: 56px;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.002em;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 680px;
+}
+
+/* Section rhythm */
+section {
+  padding: 120px 24px;
+}
+
+/* Centered Apple-style container */
+.container,
+section > div {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Soft background sections */
+.section-soft {
+  background-color: var(--bg-soft);
+}
+
+/* Links */
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>
 
 
 
@@ -115,6 +190,16 @@
 
 
   </header>
+<section style="background:#ffffff;">
+  <div class="container" style="text-align:center; padding-top:40px; padding-bottom:40px;">
+    <p style="font-size:16px; opacity:0.75;">
+      ✔ Fast Delivery &nbsp;&nbsp;•&nbsp;&nbsp;
+      ✔ Clean Code &nbsp;&nbsp;•&nbsp;&nbsp;
+      ✔ SEO-Ready &nbsp;&nbsp;•&nbsp;&nbsp;
+      ✔ Worldwide Clients
+    </p>
+  </div>
+</section>
 
  <section>
   <div class="container">
@@ -130,7 +215,8 @@
 </section>
 
 
- <section style="background:#f8fafc;">
+<section class="section-soft">
+
   <div class="container">
     <h2>Why Choose Maole Stack</h2>
     <ul>
