@@ -213,6 +213,20 @@ header a:hover {
   section {
   scroll-margin-top: 80px;
 }
+/* =========================
+   APPLE SCROLL REVEAL
+   ========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 </style>
 
@@ -238,7 +252,8 @@ header a:hover {
 
 
  <header>
-  <div class="container" style="text-align:center; padding:120px 0;">
+  <div class="container reveal" style="text-align:center; padding:120px 0;">
+
     <h1 class="hero-title">Maole Stack</h1>
 
    <p class="hero-subtitle">
@@ -272,7 +287,8 @@ header a:hover {
 <section id="services">
 
 
-  <div class="container">
+  <div class="container reveal">
+
     <h2>What We Do</h2>
     <ul>
       <li>Business Websites</li>
@@ -287,7 +303,8 @@ header a:hover {
 
 <section class="section-soft">
 
-  <div class="container">
+  <div class="container reveal">
+
     <h2>Why Choose Maole Stack</h2>
     <ul>
       <li>Clean, scalable code</li>
@@ -300,7 +317,8 @@ header a:hover {
 
 
 <section>
-  <div class="container">
+ <div class="container reveal">
+
     <h2>How We Work</h2>
 
     <h3>1. Discovery</h3>
@@ -318,7 +336,8 @@ header a:hover {
 </section>
 
 <section class="section-soft">
-  <div class="container">
+  <div class="container reveal">
+
     <h2>About Maole Stack</h2>
 
     <p>Maole Stack is a modern digital studio focused on building reliable, high-quality websites and web applications for businesses worldwide.</p>
@@ -333,7 +352,8 @@ header a:hover {
 
 
 <section id="work">
-  <div class="container">
+  <div class="container reveal">
+
     <h2>Our Work</h2>
     <p>Selected projects demonstrating our web development capabilities.</p>
 
@@ -372,6 +392,8 @@ header a:hover {
 
   <section>
   <div class="container">
+
+
     <h2>Contact Maole Stack</h2>
     <p>Let’s talk about your project. Send us a message and we’ll get back to you.</p>
 
@@ -413,6 +435,24 @@ header a:hover {
      💬
   </a>
 
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  reveals.forEach(reveal => {
+    observer.observe(reveal);
+  });
+</script>
 
 
 
