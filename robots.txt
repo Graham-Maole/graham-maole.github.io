@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://graham-maole.github.io/sitemap.xml
