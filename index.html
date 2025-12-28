@@ -258,10 +258,7 @@ header a:hover {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+
 /* Apple-style lists */
 ul {
   list-style: none;
@@ -292,15 +289,19 @@ section h3 {
   margin-bottom: 12px;
 }
 /* Apple-style fade & lift animation */
-.reveal {
+
+/* Apple-style fade-in animation */
+.fade-in {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(14px);
+  animation: fadeUp 0.8s ease-out forwards;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 </style>
@@ -516,24 +517,7 @@ section h3 {
      💬
   </a>
 
-<script>
-  const reveals = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
-
-  reveals.forEach(reveal => {
-    observer.observe(reveal);
-  });
-</script>
 
 <script>
   const reveals = document.querySelectorAll('.reveal');
