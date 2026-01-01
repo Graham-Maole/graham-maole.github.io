@@ -303,6 +303,38 @@ section h3 {
     transform: translateY(0);
   }
 }
+/* Step 14A – Apple-style CTA spacing */
+.cta-section {
+  padding: 160px 24px;
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 120px 20px;
+  }
+}
+/* =========================
+   STEP 14 – CTA POLISH
+   ========================= */
+
+/* Step 14A – Apple-style CTA spacing */
+.cta-section {
+  padding: 160px 24px;
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 120px 20px;
+  }
+}
+
+/* Step 14B – CTA label refinement */
+.cta-label {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 8px;
+}
 
 </style>
 
@@ -463,7 +495,8 @@ section h3 {
 </section>
 
 
-<section id="contact"
+<section id="contact" class="cta-section"
+
          style="
            padding:120px 24px;
            background:#0f172a;
@@ -484,9 +517,9 @@ section h3 {
 </h2>
 
 <div style="margin-top:24px; text-align:center;">
-  <div style="font-size:16px; color:#94a3b8; margin-bottom:6px;">
-    Email
-  </div>
+ <div class="cta-label">
+  Email
+</div>
 
   <a href="mailto:maolestack@gmail.com"
      style="
