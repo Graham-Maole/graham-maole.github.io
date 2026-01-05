@@ -1,11 +1,11 @@
-<svg width="200" height="64" viewBox="0 0 200 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="120" height="100" viewBox="0 0 120 100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Icon -->
-  <rect x="8" y="8" width="6" height="48" fill="#0a0a0a" rx="1"/>
-  <path d="M14 8L14 16L34 40L34 48L40 48L40 40L60 16L60 8L54 8L40 26L40 8L34 8L34 26L20 8L14 8Z" fill="#0a0a0a"/>
-  <rect x="34" y="16" width="6" height="40" fill="#0a0a0a" rx="1"/>
-  <rect x="54" y="8" width="6" height="48" fill="#0a0a0a" rx="1"/>
-  <circle cx="32" cy="32" r="4" fill="#0a0a0a" fill-opacity="0.3"/>
+  <rect x="36" y="8" width="6" height="48" fill="#0a0a0a" rx="1"/>
+  <path d="M42 8L42 16L62 40L62 48L68 48L68 40L88 16L88 8L82 8L68 26L68 8L62 8L62 26L48 8L42 8Z" fill="#0a0a0a"/>
+  <rect x="62" y="16" width="6" height="40" fill="#0a0a0a" rx="1"/>
+  <rect x="82" y="8" width="6" height="48" fill="#0a0a0a" rx="1"/>
+  <circle cx="60" cy="32" r="4" fill="#0a0a0a" fill-opacity="0.3"/>
   
-  <!-- Text: Nicole Nova -->
-  <text x="75" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#0a0a0a" letter-spacing="-0.5">Nicole Nova</text>
+  <!-- Text: Nicole Nova (centered below icon) -->
+  <text x="60" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#0a0a0a" text-anchor="middle" letter-spacing="-0.5">Nicole Nova</text>
 </svg>
