@@ -376,23 +376,7 @@ body {
   }
 }
 
-/* TEXT SPREAD → SETTLE */
-@keyframes textSpread {
-  0% {
-    opacity: 0;
-    letter-spacing: 0.45em;
-    transform: translateY(6px);
-  }
-  60% {
-    opacity: 1;
-    letter-spacing: 0.25em;
-  }
-  100% {
-    opacity: 1;
-    letter-spacing: 0.12em;
-    transform: translateY(0);
-  }
-}
+
 .logo-text-group text {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui;
   font-size: 22px;
@@ -403,9 +387,11 @@ body {
 .logo-letter {
   opacity: 0;
   transform-origin: center;
+  transform-box: fill-box;
   animation: letterFlip 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   animation-delay: calc(var(--i) * 0.08s);
 }
+
 
 /* TikTok-style somersault, Apple-polished */
 @keyframes letterFlip {
@@ -476,11 +462,13 @@ body {
 <!-- INTRO LOGO OVERLAY -->
 <div id="intro-logo">
 
-  <svg
-    width="180"
-    height="120"
-    viewBox="0 0 120 100"
-    xmlns="http://www.w3.org/2000/svg">
+ <svg
+  width="180"
+  height="120"
+  viewBox="0 0 120 100"
+  xmlns="http://www.w3.org/2000/svg"
+  style="perspective: 800px;">
+
 
     <!-- Icon -->
     <rect x="36" y="8" width="6" height="48" rx="1" class="logo-icon"/>
