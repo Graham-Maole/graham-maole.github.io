@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -356,14 +356,16 @@ body {
 .logo-icon {
   fill: #0a0a0a;
   opacity: 0;
-  transform: scale(0.92);
-  animation: iconIn 1.4s ease forwards;
+  transform: scale(0.9);
+  animation: iconIn 1.2s ease forwards;
+  animation-delay: 0.3s;
 }
 
 .logo-icon-soft {
   fill: rgba(10,10,10,0.35);
   opacity: 0;
-  animation: iconIn 1.6s ease forwards;
+  animation: iconIn 1.2s ease forwards;
+  animation-delay: 0.5s;
 }
 
 
@@ -386,10 +388,29 @@ body {
 
 .logo-letter {
   opacity: 0;
-  transform-origin: center;
   transform-box: fill-box;
-  animation: letterFlip 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  animation-delay: calc(var(--i) * 0.08s);
+  transform-origin: center;
+  backface-visibility: hidden;
+
+  animation: letterFlip 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(1.2s + var(--i) * 0.09s);
+}
+
+
+#intro-logo svg {
+  width: 180px;
+  animation: logoReveal 1.4s ease forwards;
+}
+
+@keyframes logoReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
@@ -413,29 +434,22 @@ body {
    INTRO LOGO ANIMATION
    ========================= */
 
+
+
+}
 #intro-logo {
-  position: fixed;
-  inset: 0;
-  background: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: introFadeOut 1s ease forwards;
-  animation-delay: 2.8s;
+  perspective: 1000px;
+}
+
+#intro-logo svg {
+  transform-style: preserve-3d;
 }
 
 
 /* Logo entrance */
 
 
-/* Screen fade out */
-@keyframes introFadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
+
 
 </style>
 
@@ -449,12 +463,13 @@ body {
 <!-- INTRO LOGO OVERLAY -->
 <div id="intro-logo">
 
- <svg
+<svg
   width="180"
   height="120"
   viewBox="0 0 120 100"
   xmlns="http://www.w3.org/2000/svg"
-  style="perspective: 800px;">
+  style="perspective: 1000px; transform: translateZ(0);">
+
 
 
     <!-- Icon -->
@@ -769,8 +784,9 @@ window.addEventListener("load", () => {
 
   if (intro) {
     setTimeout(() => {
-      intro.remove();
-    }, 3200);
+  intro.remove();
+}, 3800);
+
   }
 });
 
